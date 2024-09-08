@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Resume Builder</h1>
+        <form id="resumeForm">
+            <h2>Personal Information</h2>
+            <input type="text" id="fullName" placeholder="Full Name" required>
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+
+            <h2>Education</h2>
+            <input type="text" id="school" placeholder="School/University" required>
+            <input type="text" id="degree" placeholder="Degree" required>
+            <input type="text" id="year" placeholder="Year" required>
+
+            <h2>Skills</h2>
+            <input type="text" id="skills" placeholder="Skills (comma-separated)" required>
+
+            <h2>Work Experience</h2>
+            <div id="workExperienceContainer"></div>
+            <button type="button" id="addExperienceBtn">Add Experience</button>
+        </form>
+
+        <div id="resumePreview" style="display: none;">
+            <h2>Resume</h2>
+            <div id="personalInfo"></div>
+            <div id="educationInfo"></div>
+            <div id="skillsInfo"></div>
+            <div id="workExperienceInfo"></div>
+        </div>
+
+        <button id="toggleEditBtn">Create Resume</button> <!-- Button to switch between create/edit modes -->
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
