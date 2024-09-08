@@ -6,6 +6,9 @@ const skillsInfo = document.getElementById('skillsInfo') as HTMLElement;
 const workExperienceInfo = document.getElementById('workExperienceInfo') as HTMLElement;
 const workExperienceContainer = document.getElementById('workExperienceContainer') as HTMLElement;
 const addExperienceBtn = document.getElementById('addExperienceBtn') as HTMLButtonElement;
+const toggleEditBtn = document.getElementById('toggleEditBtn') as HTMLButtonElement;
+
+let isEditing = true; // Variable to toggle between edit and view modes
 
 // Function to update resume preview
 const updateResumePreview = () => {
@@ -93,3 +96,16 @@ const addNewExperienceFields = () => {
 
 // Add event listener for "Add Experience" button
 addExperienceBtn.addEventListener('click', addNewExperienceFields);
+
+// Function to toggle between edit and view modes
+toggleEditBtn.addEventListener('click', () => {
+    if (isEditing) {
+        updateResumePreview();
+        resumeForm.style.display = 'none';
+        toggleEditBtn.textContent = 'Edit Resume';
+    } else {
+        resumeForm.style.display = 'block';
+        toggleEditBtn.textContent = 'Create Resume';
+    }
+    isEditing = !isEditing;
+});
